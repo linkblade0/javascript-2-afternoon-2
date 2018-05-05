@@ -18,7 +18,11 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    return arr[i];
+  }
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +37,13 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+var last = function (arr) {
+  for(var i = 0; i < arr.length; i++) {
+    if (i === arr.length-1) {
+      return arr[i];
+    }
+  }
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +58,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+var looper = function(family) {
+  for(var i = 0; i < family.length; i++) {
+    alert(family[i])
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +77,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+var reversedLooper = function(letters) {
+  for(var i = letters.length-1; i >=0; i--) {
+    alert(letters[i])
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +96,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+var evenFinder = function (arr) {
+  var evenNum = []
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] % 2 ===0) {
+      evenNum.push(arr[i])
+    }
+  }
+  return evenNum
+}
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,7 +121,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider (arr) {
+  var evenNums = []
+  var oddNums = []
+  var twoArrays = [evenNums, oddNums]
+  for(var i=0;i<arr.length;i++) {
+    if (arr[i]%2===0) {
+      evenNums.push(arr[i])
+    } else {
+      oddNums.push(arr[i])
+    }
+  }
+  return twoArrays
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -116,7 +154,10 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+var finder = function (arr) {
+  var random = getRandomArbitrary()
+  return arr.includes(random);
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -145,8 +186,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(arr, item) {
+  if (arr && item){
+   for (var i=0;i<arr.length;i++){
+     if (arr[i] === item) {
+       arr.splice(i, 1)
+     }
+   }
+    return arr
+  } else {
+    return [];
+  }
+}
 
 
+function addItem(arr, item) {
+  if (arr && item){
+    arr.push(item)
+    return arr;
+  } else {
+    return [];
+  }
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -155,7 +216,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker () {
+  var numbers = [];
+  for (var i = 0; i <= 214;i++){
+    numbers.push(i+1);
+  }
+  return numbers;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -171,7 +238,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen (numbers) {
+  var bigNumbers = [];
+  for(var i=0;i<numbers.length;i++){
+    var newNum = Number(numbers[i]);
+    newNum+=10
+    bigNumbers.push(newNum)
+  }
+  return bigNumbers;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -196,7 +271,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer (arr1, arr2) {
+  if(arr1.length > arr2.length) {
+    return arr1
+  } else {
+    return arr2
+  }
+}
 
 
 /*
@@ -209,6 +290,16 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+const both = (arr1, arr2) => {
+  let newArray = [];
+
+  arr1.forEach(item => {
+    if(arr2.includes(item)) {
+      newArray.push(item);
+    }
+  })
+  return newArray;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -248,6 +339,9 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees = [tyler, cahlan, ryan, colt]
+
+console.log(devMountainEmployees.length)
 
 
 
@@ -258,7 +352,7 @@ var colt = {
 
 //Code Here
 
-
+devMountainEmployees.splice(devMountainEmployees.indexOf(cahlan),1)
 
 ////////// PROBLEM 13 //////////
 
@@ -269,7 +363,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = [];
 
 
 /*
@@ -288,7 +382,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users = [
+  user1,
+  user2 = {
+    name: 'Joseph Lago',
+    email: 'josephl@spotpos.com',
+    password: 'password1',
+    username: 'linkblade0'
+  },
+  user3 = {
+    name: 'Michael Hughes',
+    email: 'michaelh@spotpos.com',
+    password: 'password2',
+    username: 'michaelh2'
+  }
+]
 
 
 /*
@@ -303,6 +411,11 @@ var user1 = {
 
 //Code Here
 
+console.log(users)
+
+var newUsers = !users.filter(users => users.email === 'tylermcginnis33@gmail.com')
+
+users = newUsers
 
 
 /*
